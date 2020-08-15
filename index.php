@@ -71,7 +71,7 @@
 
 
 <div class="run">
-  <p class="welcome">WEBSHARESERVER: Your IP is not recognized for login.</p>
+  <p class="welcome"> >WEBSHARESERVER: Your IP is not recognized for login.</p>
 
 
 </div>
