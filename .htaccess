@@ -1,0 +1,14 @@
+# ==================================================================
+# Prevent .git access
+# ==================================================================
+
+RedirectMatch 404 /\.git
+
+
+# ==================================================================
+# DISABLE DIRECTORY BROWSING
+# (probably not needed due to empty index files in directories)
+# ==================================================================
+
+Options All -Indexes
+Options +FollowSymLinks
