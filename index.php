@@ -35,6 +35,7 @@
     font-family: "Bungee Hairline";
   }
 
+
   :-ms-input-placeholder {
     color: #84c754;
     font-family: "Bungee Hairline";
@@ -71,13 +72,10 @@
 
 
 <div class="run">
-  <p class="welcome"> WEBSHARESERVER: your IP is not recognized for login.</p>
-
-
+<p class="welcome"> WEBSHARESERVER: IP not recognized.</p>
 </div>
 
 
 
 </body>
 </html>
-
