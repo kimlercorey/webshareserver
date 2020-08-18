@@ -72,7 +72,7 @@
 
 
 <div class="run">
-<p class="welcome"> WEBSHARESERVER: Your IP is not recognized.</p>
+	<p class="welcome">  > WEBSHARESERVER: Your IP is not recognized.</p>
 </div>
 
 
