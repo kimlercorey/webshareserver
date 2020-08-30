@@ -1,0 +1,23 @@
+{
+  "name": "webshareserver",
+  "version": "1.0.0",
+  "description": "Test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimlercorey/webshareserver.git"
+  },
+  "author": "@kimler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimlercorey/webshareserver/issues"
+  },
+  "homepage": "https://github.com/kimlercorey/webshareserver#readme",
+  "dependencies": {
+    "google-protobuf": "^3.13.0",
+    "grpc": "^1.24.3"
+  }
+}
