@@ -28,7 +28,7 @@ function main(){
     server.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
     server.start()
 
-    console.log("gRPC app server started on 127.0.0.1:50051"
+    console.log("gRPC app server started on 127.0.0.1:50051");
 }
 
 main();
