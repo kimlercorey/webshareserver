@@ -25,10 +25,10 @@ function main(){
     var server = new grpc.Server()
     
     server.addService(service.GreetServiceService, {greet: greet})    
-    server.bind("127.0.0.1:50051", grpc.ServerCredentials.createInsecure());
+    server.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
     server.start()
 
-    console.log("gRPC server started on 127.0.0.1:50051")
+    console.log("gRPC app server started on 127.0.0.1:50051")
 }
 
 main();
