@@ -28,7 +28,7 @@ function main(){
     server.bind("0.0.0.0:50051", grpc.ServerCredentials.createInsecure());
     server.start()
 
-    console.log("gRPC app server started on 127.0.0.1:50051")
+    console.log("gRPC app server started on 127.0.0.1:50051"
 }
 
 main();
@@ -36,6 +36,6 @@ main();
 
 http.createServer(function (request, response) {
    response.writeHead(200, {'Content-Type': 'text/plain'});
-   response.end('Hello! (app)\n');
+   response.end('Hello! (app v0012)\n');
 }).listen(8080);
 console.log('Web Server running at http://127.0.0.1:8080/');
