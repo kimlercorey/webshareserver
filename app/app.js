@@ -25,10 +25,10 @@ function main(){
     var server = new grpc.Server()
     
     server.addService(service.GreetServiceService, {greet: greet})    
-    server.bind("34.198.157.242:50051", grpc.ServerCredentials.createInsecure());
+    server.bind("127.0.0.1:50051", grpc.ServerCredentials.createInsecure());
     server.start()
 
-    console.log("gRPC app server started on 34.198.157.242:50051");
+    console.log("gRPC app server started on 0.0.0.0:50051");
 }
 
 main();
@@ -37,5 +37,5 @@ main();
 http.createServer(function (request, response) {
    response.writeHead(200, {'Content-Type': 'text/plain'});
    response.end('Hello! (app v0015)\n');
-}).listen(8888);
+}).listen(8080);
 console.log('Web Server running at 127.0.0.1:8080');
