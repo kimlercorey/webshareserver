@@ -42,7 +42,7 @@ function main(){
     server.bind("service.webshareserver.com:50051", credentials_safe);
     server.start()
 
-    console.log("gRPC app server (v027) started on service.webshareserver.com:50051");
+    console.log("gRPC app server (v028) started on service.webshareserver.com:50051");
 }
 
 main();
