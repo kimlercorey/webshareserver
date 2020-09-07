@@ -42,14 +42,14 @@ function main(){
     server.bind("service.webshareserver.com:50051", credentials_safe);
     server.start()
 
-    console.log("gRPC app server started on service.webshareserver.com:50051");
+    console.log("gRPC app server: started on service.webshareserver.com:50051");
 }
 
 main();
 
 
-http.createServer(function (request, response) {
-   response.writeHead(200, {'Content-Type': 'text/plain'});
-   response.end('Hello! (app v0015)\n');
-}).listen(8080);
-console.log('>Web Server: running at service.webshareserver.com:8080');
+// http.createServer(function (request, response) {
+//    response.writeHead(200, {'Content-Type': 'text/plain'});
+//    response.end('Hello! (app v0015)\n');
+// }).listen(8080);
+// console.log('>Web Server: running at service.webshareserver.com:8080');
