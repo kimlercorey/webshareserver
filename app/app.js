@@ -39,7 +39,7 @@ function main(){
     let credentials_unsafe = grpc.ServerCredentials.createInsecure();
 
     server.addService(service.GreetServiceService, {greet: greet})    
-    server.bind("service.webshareserver.com:50051", credentials_safe);
+    server.bind("0.0.0.0:50051", credentials_safe);
     server.start()
 
     console.log("gRPC app server (v028) started on service.webshareserver.com:50051");
