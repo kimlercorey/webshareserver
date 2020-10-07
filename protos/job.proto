@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package job;
+
+service JobService{
+    // Service APIS for Jobs   
+    rpc DeleteJob (DeleteJobRequest) returns (DeleteJobResponse) {};
+    rpc UpdateJob (UpdateJobRequest) returns (UpdateJobResponse) {};   
+    rpc GetJob (GetJobRequest) returns (GetJobResponse) {};
+    rpc CreateJob (CreateJobRequest) returns (CreateJobResponse) {};
+    rpc ListJob (ListJobRequest) returns (stream ListJobResponse) {};
+}
+
+message DeleteJobRequest { int32 id = 1; }
+message DeleteJobResponse { int32 id = 1; } 
+message UpdateJobRequest { Job job = 1; }
+message UpdateJobResponse { Job job = 1; } 
+message GetJobRequest { int32 id = 1; }
+message GetJobResponse { Job job = 1; } 
+message CreateJobRequest { Job job = 1; }
+message CreateJobResponse { Job job = 1; } 
+message ListJobRequest {}
+message ListJobResponse { Job job = 1; }
+
+message Job {
+    // id is auto inc set by DB    
+    int32 id = 1;
+    // PROPERTIES REQUIRED FOR NEW JOB   
+    // Type can .eq dummy, "service name", "Library"
+    string type = 2;
+    // Request is the data to be acted upon and will vary based on the service needs
+    string request = 3;
+    // The total number of retries before considered failed - defaults to 5
+    int32 maxRetries = 4; 
+    // ADDITIONAL PROPERTIES TO BE USED
+    // upon completion contains final response of work 
+    string response = 5;
+    // if blank then it will be default value of now in the DB 
+    string timeRequested = 6;
+    // Set by server processes
+    string timeStarted = 7;
+    // Set by server processes
+    string timeComplete = 8;
+    // Incremented by Server processes
+    int32 currentRetryCount = 9;
+    // requested is default value if nothing is passed - "processing", "reprocessing", "errored", "timeout"
+    string status = 10;
+}
+
+//protoc -I=. ./protos/job.proto  --js_out=import_style=commonjs,binary:./app  --grpc_out=./app  --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin`
