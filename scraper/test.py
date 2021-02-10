@@ -26,47 +26,52 @@ from bs4 import BeautifulSoup
 # print(result)
 
 
-url = 'http://www.genesisonesolutions.com'
-base = util.getBaseURL(url)
+st = 'home'
+print(st.find("http"))
 
 
-res = requests.get(url)
-html_page = res.content
-soup = BeautifulSoup(html_page, 'html.parser')
-for tag in soup.findAll('a', href=True):
-    newlink = str(tag['href'])
-    print(newlink)
+# url = 'http://www.genesisonesolutions.com'
+# base = util.getBaseURL(url)
+# print(base)
+
+# res = requests.get(url)
+# html_page = res.content
+# soup = BeautifulSoup(html_page, 'html.parser')
+# for tag in soup.findAll('a', href=True):
+#     newlink = str(tag['href'])
+
+#     print(newlink + ':' + str(newlink.find("http"))
     
-    if not newlink.find("http"):
-        biglink = base + '/' + newlink
-        print(biglink)
-    else:
-        biglink = newlink
-        print(biglink)
+    # if newlink.find("http") = -1:
+    #     biglink = base + '/' + newlink
+    # else:
+    #     biglink = newlink
         
-    print(biglink)
-    position = biglink.find(base)
+    # print(biglink)
+        
+    # print(biglink)
+    # position = biglink.find(base)
     
-    if position > -1:
+    # if position > -1:
           
-        options = webdriver.ChromeOptions()
-        options.headless = True
-        driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-        driver.implicitly_wait(10)
+    #     options = webdriver.ChromeOptions()
+    #     options.headless = True
+    #     driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    #     driver.implicitly_wait(10)
         
-        driver.get(biglink)
+    #     driver.get(biglink)
         
-        S = lambda X: driver.execute_script('return document.body.parentNode.scroll'+X)
-        w = S('Width')
-        h = S('Height')
+    #     S = lambda X: driver.execute_script('return document.body.parentNode.scroll'+X)
+    #     w = S('Width')
+    #     h = S('Height')
         
         
-        driver.set_window_size(w, h)
+    #     driver.set_window_size(w, h)
         
-        locale = util.getFullPath(biglink)
-        print(locale)
+    #     locale = util.getFullPath(biglink)
+    #     print(locale)
 
-        driver.get_screenshot_as_file(locale)
+    #     driver.get_screenshot_as_file(locale)
 
 
 

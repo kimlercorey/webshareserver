@@ -12,11 +12,12 @@ import sys
 #v_site=sys.argv[1]
 #v_url=sys.argv[2]
 
-connection = MySQLdb.connect(host='127.0.0.1',
+
+connection = pyodbc.connect(host='localhost',
                             database='sites',
-                            port=3300,
-                            user='appuser',
-                            password='pw')
+                            port=5432,
+                            user='poastgres',
+                            password='sa')
 mySql_insert_query = "INSERT INTO sitename (siteName, siteURL) VALUES ('SEO Marketing Pilot 2','" + sys.argv[1] + "')"
 cursor = connection.cursor()
 cursor.execute(mySql_insert_query)

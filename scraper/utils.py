@@ -15,6 +15,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
+import psycopg2
 
 
 
@@ -28,8 +29,8 @@ def getBaseURL(url):
 def getFullPath(url):
     
     baseDirectory = setting('image location')
-    filename = util.nameFileDirectory(url)
-    savedir = baseDirectory + '\\' + util.nameFileDirectory(util.getBaseURL(url))
+    filename = nameFileDirectory(url)
+    savedir = baseDirectory + '\\' + nameFileDirectory(getBaseURL(url))
     checkDirectory(savedir)
     savefinal = savedir + '\\' + filename + '.png'
        
@@ -50,8 +51,9 @@ def checkDirectory(directory):
     return
 
   
-
+    
 def snapshotSiteAndSave(url):
+# url = 'https://www.microsoft.com'
     
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -67,7 +69,7 @@ def snapshotSiteAndSave(url):
     
     driver.set_window_size(w, h)
     
-    locale = util.getFullPath(url)
+    locale = getFullPath(url)
     print(locale)
     
     
@@ -91,7 +93,7 @@ def snapshotSiteAndSave(url):
     
     # driver.get_screenshot_as_file(location)
     
-    return
+    # return
     
 
 
